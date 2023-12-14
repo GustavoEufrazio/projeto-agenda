@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package dao;
 
 import java.sql.Connection;
@@ -15,20 +11,17 @@ import modelo.Acesso;
 import modelo.Contato;
 import modelo.Login;
 
-/**
- *
- * @author LAB_ETESC
- */
+
 public class Banco {
 
     private Connection conexao;
 
-    //Quando a classe for construída ele obterá a conexão
+   
     public Banco() throws Exception {
         this.conexao = CriaConexao.getconexao();
     }
 
-    //Método para adicionar um contato ao Banco
+  
     public void adicionarContato(Contato ctt) throws SQLException {
 
         String sql = "insert into info (matricula,nome,email) values(?,?,?)";
@@ -76,7 +69,7 @@ public class Banco {
 
         if (rs.next()) {
             c.setNome(rs.getString("nome"));
-            //c.setEmail(rs.getString("email"));
+            
         }
         return c;
     }
